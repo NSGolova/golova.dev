@@ -1,0 +1,43 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.container {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+#container {height: 100%; width:100%; font-size: 0;}
+#left-dev, #middle-dev, #right-dev {display: inline-block; *display: inline; font-size: 28px;}
+#left-dev {width: 36%;color: #149C92;}
+#middle-dev {width: 28%;top: 90%;}
+#right-dev {width: 10%;color: #149C92;}
+
+#left-a, #middle-a, #right-a {display: inline-block; *display: inline; font-size: 28px;}
+#left-a {width: 56%;color: #149C92;}
+#middle-a {width: 28%;vertical-align: center;}
+#right-a {width: 10%;color: #149C92;}
+
+#left-gamer, #middle-gamer, #right-gamer {display: inline-block; *display: inline; font-size: 28px;}
+#left-gamer {width: 56%;color: #149C92;}
+#middle-gamer {width: 28%;vertical-align: center;}
+#right-gamer {width: 10%;color: #149C92;}
