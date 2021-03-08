@@ -1,0 +1,3 @@
+[submodule "FractalSoundWeb"]
+	path = FractalSoundWeb
+	url = https://github.com/radulov/FractalSoundWeb.git
