@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('FractalSoundWeb'))
+app.use('/experiments', express.static('FractalSoundWeb'));
 
 app.use('/', indexRouter);
 app.use('/experiments/fractalSounds', fractalsRouter);
