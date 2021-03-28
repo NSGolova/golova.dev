@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/experiments', express.static('FractalSoundWeb'));
-app.use('/experiments/ddonut/models', express.static('Donut/models'));
+app.use('/experiments/ddonut/models', express.static('public/models'));
 
 app.use('/', indexRouter);
 app.use('/experiments', experimentsRouter);
