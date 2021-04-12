@@ -101,8 +101,8 @@ export class Viewer {
       ambientColor: 0xFFFFFF,
       directIntensity: 0.8 * Math.PI, // TODO(#116)
       directColor: 0xFFFFFF,
-      bgColor1: '#7daa8b',
-      bgColor2: '#353535'
+      bgColor1: this.options.bgColor1 ? this.options.bgColor1 : '#7daa8b',
+      bgColor2: this.options.bgColor2 ? this.options.bgColor2 : '#353535'
     };
 
     this.prevTime = 0;
@@ -154,7 +154,7 @@ export class Viewer {
 
     this.vignette = createBackground({
       aspect: this.defaultCamera.aspect,
-      grainScale: IS_IOS ? 0 : 0.01, // mattdesl/three-vignette-background#1
+      grainScale: IS_IOS ? 0 : this.options.grainScale ? this.options.grainScale : 0.01, // mattdesl/three-vignette-background#1
       colors: [this.state.bgColor1, this.state.bgColor2]
     });
     this.vignette.name = 'Vignette';
@@ -403,11 +403,11 @@ export class Viewer {
       const loader = new GLTFLoader()
         .setCrossOrigin('anonymous')
         .setDRACOLoader(
-          new DRACOLoader( ).setDecoderPath( 'assets/wasm/' )
+          new DRACOLoader( ).setDecoderPath( 'https://unpkg.com/three@0.126.1/examples/js/libs/draco/' )
         )
         .setKTX2Loader(
           new KTX2Loader(  )
-            .setTranscoderPath( 'assets/wasm/' )
+            .setTranscoderPath( 'https://unpkg.com/three@0.126.1/examples/js/libs/basis/' )
             .detectSupport( this.renderer )
         )
         .setMeshoptDecoder( MeshoptDecoder );
@@ -457,23 +457,30 @@ export class Viewer {
     object.position.x += (object.position.x - center.x);
     object.position.y += (object.position.y - center.y);
     object.position.z += (object.position.z - center.z);
-    object.position.y += 0.2;
+    if (this.options.objectPosition) {
+      let objPositionOffset = this.options.objectPosition;
+      object.position.y += objPositionOffset.y;
+    }
+
     this.controls.maxDistance = size * 10;
     // this.defaultCamera.near = size / 100;
     // this.defaultCamera.far = size * 100;
     // this.defaultCamera.updateProjectionMatrix();
 
     if (this.options.cameraPosition) {
-
-      this.defaultCamera.position.fromArray( this.options.cameraPosition );
-      this.defaultCamera.lookAt( new Vector3() );
+      this.defaultCamera.position.copy(center);
+      let camPositionOffset = this.options.cameraPosition;
+      this.defaultCamera.position.x += camPositionOffset.x;
+      this.defaultCamera.position.y += camPositionOffset.y;
+      this.defaultCamera.position.z += camPositionOffset.z;
+      this.defaultCamera.lookAt(center);
 
     } else {
 
       this.defaultCamera.position.copy(center);
-      this.defaultCamera.position.x += 1.1;
-      this.defaultCamera.position.y += -0.3;
-      this.defaultCamera.position.z += 0.15;
+      this.defaultCamera.position.x += 1.5;
+      this.defaultCamera.position.y += 1.5;
+      this.defaultCamera.position.z += 1.5;
       this.defaultCamera.lookAt(center);
 
     }
@@ -652,11 +659,11 @@ export class Viewer {
   updateEnvironment () {
 
     const environment = {
-    id: 'venice-sunset',
-    name: 'Venice Sunset',
-    path: '../../environment/venice_sunset_1k.hdr',
-    format: '.hdr'
-  };
+      id: 'venice-sunset',
+      name: 'Venice Sunset',
+      path: '../../environment/venice_sunset_1k.hdr',
+      format: '.hdr'
+    };
 
     this.getCubeMapTexture( environment ).then(( { envMap } ) => {
 
@@ -665,8 +672,9 @@ export class Viewer {
       // } else {
       //   this.scene.remove(this.vignette);
       // }
-
-      // this.scene.environment = envMap;
+      if (this.options.addEnvironment) {
+        this.scene.environment = envMap;
+      }
       // this.scene.background = this.state.background ? envMap : null;
 
     });

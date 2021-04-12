@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Just donut</title>
+    <link rel="stylesheet" href="../stylesheets/donutStyle.css"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <style>
@@ -16,19 +17,23 @@
 </head>
 
 <body>
-    <!-- <script type="module" src="../../javascripts/gltfLoader.js"></script> -->
+    <div id="container">
+      <div id="viewer-div" class="viewer">
+      </div>
+    </div>
     <div>
         <script type="module">
 
         import { Viewer } from '../../javascripts/gltfViewer.js';
-        let container = document.createElement( 'div' );
-        let viewerDiv = document.createElement( 'div' );
-        viewerDiv.classList.add('viewer');
-        container.appendChild(viewerDiv);
+        let viewerDiv = document.querySelector('#viewer-div');
+        let viewer = new Viewer(viewerDiv, {
+          cameraPosition: {x: 0.3, y: 0.2, z: 0.3},
+          addEnvironment: true,
+          bgColor1: '#FFFFFF',
+          bgColor2: '#FF5DF7',
+          grainScale: 0.001
+        });
 
-        document.body.appendChild( container );
-
-        let viewer = new Viewer(viewerDiv, {});
         viewer.load('ddonut/models/ddonut.glb');
     </script>
 </div>

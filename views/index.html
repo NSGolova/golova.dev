@@ -22,7 +22,10 @@
 
         import { Viewer } from '../../javascripts/gltfViewer.js';
         let viewerDiv = document.querySelector('#viewer-div');
-        let viewer = new Viewer(viewerDiv, {});
+        let viewer = new Viewer(viewerDiv, {
+          cameraPosition: {x: 1.1, y: -0.3, z: 0.15},
+          objectPosition: {x: 0.0, y: 0.5, z: 0.0}
+        });
         viewer.load('models/head.glb');
     </script>
 </div>
