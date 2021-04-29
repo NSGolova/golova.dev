@@ -1,3 +1,6 @@
 [submodule "FractalSoundWeb"]
 	path = FractalSoundWeb
-	url = https://github.com/radulov/FractalSoundWeb.git
+	url=https://github.com/radulov/FractalSoundWeb.git
+[submodule "LatticeGasWeb"]
+	path = LatticeGasWeb
+	url = https://github.com/radulov/LatticeGasWeb.git

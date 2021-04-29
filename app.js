@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var experimentsRouter = require('./routes/experiments');
+var automataRouter = require('./routes/automata');
 
 var app = express();
 
@@ -19,10 +20,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/experiments', express.static('FractalSoundWeb'));
+app.use('/automata', express.static('LatticeGasWeb'));
 app.use('/experiments/ddonut/models', express.static('public/models'));
 
 app.use('/', indexRouter);
 app.use('/experiments', experimentsRouter);
+app.use('/automata', automataRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
