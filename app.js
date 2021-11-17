@@ -20,7 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/experiments', express.static('FractalSoundWeb'));
-app.use('/automata', express.static('LatticeGasWeb'));
+app.use('/automata/gasomaton', express.static('LatticeGasWeb'));
+app.use('/automata/gasomatonLite', express.static('GasomatonLite'));
+app.use('/automata/gasomatonGPU', express.static('GasomatonGPU'));
 app.use('/experiments/ddonut/models', express.static('public/models'));
 
 app.use('/', indexRouter);
