@@ -4,3 +4,9 @@
 [submodule "LatticeGasWeb"]
 	path = LatticeGasWeb
 	url = https://github.com/radulov/LatticeGasWeb.git
+[submodule "GasomatonLite"]
+	path = GasomatonLite
+	url = https://github.com/radulov/LatticeGasWeb.git
+[submodule "GasomatonGPU"]
+	path = GasomatonGPU
+	url = https://github.com/radulov/LatticeGasWeb.git
