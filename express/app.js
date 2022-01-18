@@ -46,5 +46,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const router = express.Router();
+app.use('/.netlify/functions/server', router);  // path must route to lambda
+
 module.exports = app;
 module.exports.handler = serverless(app);
