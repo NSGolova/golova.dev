@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "netlify-lambda build express",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -14,5 +15,9 @@
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "three": "^0.126.1"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^2.7.0"
   }
 }
