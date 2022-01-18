@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "netlify-lambda build app.js",
+    "build": "netlify-lambda build express",
     "start": "node ./bin/www"
   },
+  "main": "functions/app.js",
   "dependencies": {
     "audio-feeder": "^0.5.0",
     "cookie-parser": "~1.4.4",
