@@ -123,7 +123,7 @@
         <h1>friend</h1>
       </a>
     </div>
-    <div>
+    <div class="gallery-container">
       <span class="gallery-header">But also I like to make other fun stuff!</span>
       <div class="gallery">
         <figure class="gallery__item gallery__item--1">
@@ -278,4 +278,23 @@
     grid-row-start: 5;
     grid-row-end: 7;
   }
+
+  @media screen and (max-width: 700px) {
+    .links-and-gallery {
+      flex-direction: column;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 0;
+    }
+    .gallery-header {
+      margin-left: 0.5em;
+    }
+    .gallery-container {
+      padding-top: 1em;
+    }
+  }
+
+  
 </style>
