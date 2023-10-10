@@ -1,0 +1,27 @@
+body {
+  background-color: indigo;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.container {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.bottom-left {
+  position: relative;
+  bottom: 40px;
+  left: 30px;
+  color: white;
+  font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgba(0, 0, 0, 0.6);
+}

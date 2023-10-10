@@ -1,12 +1,12 @@
 [submodule "FractalSoundWeb"]
 	path = FractalSoundWeb
-	url=https://github.com/radulov/FractalSoundWeb.git
+	url=https://github.com/NSGolova/FractalSoundWeb.git
 [submodule "LatticeGasWeb"]
 	path = LatticeGasWeb
-	url = https://github.com/radulov/LatticeGasWeb.git
+	url = https://github.com/NSGolova/LatticeGasWeb.git
 [submodule "GasomatonLite"]
 	path = GasomatonLite
-	url = https://github.com/radulov/LatticeGasWeb.git
+	url = https://github.com/NSGolova/LatticeGasWeb.git
 [submodule "GasomatonGPU"]
 	path = GasomatonGPU
-	url = https://github.com/radulov/LatticeGasWeb.git
+	url = https://github.com/NSGolova/LatticeGasWeb.git
