@@ -13,5 +13,8 @@ export default {
       // if `edge` is true, this option cannot be used
       split: false,
     }),
+    prerender: {
+      handleHttpError: 'warn'
+    }
   },
 };
