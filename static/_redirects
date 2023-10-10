@@ -1,4 +1,4 @@
 /experiments/fractalSounds   /FractalSoundWeb/index.html   200!
-/automata/gasomaton   /pages/gasomaton.html   200!
+/automata/gasomaton   /LatticeGasWeb/index.html   200!
 /experiments/*   /FractalSoundWeb/:splat   200!
 /automata/*   /LatticeGasWeb/:splat   200!
