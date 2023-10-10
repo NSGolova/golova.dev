@@ -1,0 +1,4 @@
+/experiments/fractalSounds   /pages/fractalSound.html   200!
+/automata/gasomaton   /pages/gasomaton.html   200!
+/experiments/*   /FractalSoundWeb/:splat   200!   X-From=Netlify
+/automata/*   /LatticeGasWeb/:splat   200!   X-From=Netlify
