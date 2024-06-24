@@ -1,8 +1,0 @@
-[build]
-	command = "npm run build"
-	publish = "build"
-
-[dev]
-    framework = "svelte-kit"
-    targetPort = 3008
-    port = 8009
